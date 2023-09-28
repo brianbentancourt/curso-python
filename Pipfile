@@ -5,6 +5,7 @@ name = "pypi"
 
 [packages]
 openpyxl = "*"
+django = "==4.1.7"
 
 [dev-packages]
 
