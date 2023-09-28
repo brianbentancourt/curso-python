@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 # Create your models here.
 
@@ -17,3 +18,4 @@ class Producto(models.Model):
     # SET_NULL: actualiza a valor nulo
     # SET_DEFAULT: asigna un valor por defecto
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE)
+    creado_en = models.DateTimeField(default=timezone.now)
