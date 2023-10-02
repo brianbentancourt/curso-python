@@ -8,8 +8,12 @@ from .models import Producto
 
 
 def index(request):
-    productos = Producto.objects.all().values()
+    productos = Producto.objects.all()
     # productos = Producto.objects.filter(puntaje__gte=3)
     # productos = Producto.objects.get(id=1)
 
-    return JsonResponse(list(productos), safe=False)
+    return render(
+        request,
+        'index.html',
+        context={'productos': productos}
+    )
